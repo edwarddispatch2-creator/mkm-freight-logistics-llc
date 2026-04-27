@@ -1,0 +1,30 @@
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type UserProfile = record {name: text;};
+type Time = int;
+type ContactSubmission = 
+ record {
+   companyName: text;
+   email: text;
+   name: text;
+   numTrucks: text;
+   phone: text;
+   serviceNeeded: text;
+   timestamp: Time;
+ };
+service : {
+  _initializeAccessControl: () -> ();
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  getAllSubmissions: () -> (vec ContactSubmission) query;
+  getCallerUserProfile: () -> (opt UserProfile) query;
+  getCallerUserRole: () -> (UserRole) query;
+  getUserProfile: (user: principal) -> (opt UserProfile) query;
+  isCallerAdmin: () -> (bool) query;
+  saveCallerUserProfile: (profile: UserProfile) -> ();
+  submitContactForm: (name: text, companyName: text, phone: text, email:
+   text, numTrucks: text, serviceNeeded: text) -> ();
+}

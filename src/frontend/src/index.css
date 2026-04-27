@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Navy Blue: #0a1f44 -> oklch(0.22 0.06 256) */
+    /* Gold: #c9a84c -> oklch(0.73 0.12 82) */
+    /* White: #ffffff -> oklch(1 0 0) */
+    /* Light gray: #f5f5f5 -> oklch(0.97 0 0) */
+    /* Dark text: #333333 -> oklch(0.28 0 0) */
+
+    --background: 0.97 0 0;
+    --foreground: 0.22 0.06 256;
+    --card: 1 0 0;
+    --card-foreground: 0.22 0.06 256;
+    --popover: 1 0 0;
+    --popover-foreground: 0.22 0.06 256;
+    --primary: 0.22 0.06 256;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.73 0.12 82;
+    --secondary-foreground: 0.22 0.06 256;
+    --muted: 0.94 0.005 256;
+    --muted-foreground: 0.5 0.02 256;
+    --accent: 0.73 0.12 82;
+    --accent-foreground: 0.22 0.06 256;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+    --border: 0.89 0.01 256;
+    --input: 0.89 0.01 256;
+    --ring: 0.73 0.12 82;
+    --chart-1: 0.73 0.12 82;
+    --chart-2: 0.22 0.06 256;
+    --chart-3: 0.6 0.1 200;
+    --chart-4: 0.82 0.14 90;
+    --chart-5: 0.5 0.08 270;
+    --sidebar: 0.22 0.06 256;
+    --sidebar-foreground: 1 0 0;
+    --sidebar-primary: 0.73 0.12 82;
+    --sidebar-primary-foreground: 0.22 0.06 256;
+    --sidebar-accent: 0.3 0.07 256;
+    --sidebar-accent-foreground: 1 0 0;
+    --sidebar-border: 0.32 0.06 256;
+    --sidebar-ring: 0.73 0.12 82;
+
+    /* Brand tokens */
+    --navy: 0.22 0.06 256;
+    --navy-dark: 0.16 0.06 258;
+    --gold: 0.73 0.12 82;
+    --gold-light: 0.8 0.12 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+}
